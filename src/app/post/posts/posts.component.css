@@ -1,0 +1,58 @@
+.post-container {
+    margin: auto;
+    text-align: center;
+    box-sizing: border-box;
+    text-align: left;
+    display: inline-block;
+    padding: 20px 30px;
+    width: 400px;
+    margin: 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    border: 3px solid rgb(5, 109, 60);
+}
+
+.post-container h2 {
+    font-size: 22px;
+    height: 3.0em;
+    justify-content: left;
+    color: rgb(5, 109, 60);
+}
+
+.preview {
+    height: 250px;
+    width: 250px;
+    text-align: center;
+}
+
+.preview>img {
+    object-fit: contain;
+    height: 220px;
+    width: 330px;
+}
+
+.data-info {
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+.data-buttons {
+    text-align: center;
+    margin: 5px;
+}
+
+.buttonPostDetails {
+    background-color: #7f8880;
+    border: none;
+    color: white;
+    padding: 10px;
+    width: 100px;
+    margin: 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+}

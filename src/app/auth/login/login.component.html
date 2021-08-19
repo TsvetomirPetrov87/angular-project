@@ -1,0 +1,42 @@
+<section id="login">
+    <div class="container">
+        <form  (ngSubmit)="catchLogin(formLogin)" id="login-form" action="#" method="post">
+            <h1>Login</h1>
+            <p>Please enter your credentials.</p>
+            <hr>
+
+            <p>Username</p>
+            <label for="username"></label>
+            <input type="text" placeholder="Enter Username" name="username" id="username" ngModel required [minLength]="5">
+
+            <ng-container *ngIf="username.touched">
+                <div *ngIf="username.errors?.required" class="validation">
+                    Username is required!
+                </div>
+                <div *ngIf="username.errors?.minlength" class="validation">
+                    Username should be more than 5 characters!
+                </div> 
+            </ng-container>
+
+            <p>Password</p>
+            <label for="password"></label>
+            <input type="password" placeholder="Enter Password" name="password" id="password" ngModel required [minLength]="6">
+            
+            <ng-container *ngIf="password.touched">
+                <div *ngIf="password.errors?.required" class="validation" alert alert-danger>
+                    Password is required!
+                </div>
+                <div *ngIf="password.errors?.minlength" class="validation">
+                    Password should be more than 6 characters!
+                </div> 
+            </ng-container>
+            
+            <input type="submit" class="registerbtn" value="Login">
+        </form>
+        <div class="register">
+            <p>Don't have an account?
+                <a routerLink="/register">Register</a>.
+            </p>
+        </div>
+    </div>
+</section>

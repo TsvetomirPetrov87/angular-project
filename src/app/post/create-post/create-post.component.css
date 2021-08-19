@@ -1,0 +1,126 @@
+
+/*workshop
+.post-container a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.post-container span {
+    font-weight: bold;
+}
+
+.post-container h2, p {
+    padding: 0.3em 0 0.2em;
+    margin: 0;
+}
+
+.post-name-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3em 0.5em;
+    border: 1px solid #999;
+    border-radius: 0.3em;
+    font-size: 0.8em;
+    margin-top: 1em;
+}
+
+.post-title {
+    padding: 0;
+}
+
+.post-name {
+    width: 100%;
+}
+
+.elements {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.7rem;
+}
+
+.subscribers {
+    text-align: right;
+    flex-basis: 25%;
+}
+
+.subscribers button {
+    padding: 0.2rem 0.5rem;
+    border: none;
+    border-radius: 0.3rem;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+}
+
+.subscribe {
+    background-color: green;
+}
+
+.unsubscribe {
+    background-color: red;
+}
+
+time {
+    font-weight: bold;
+}*/
+
+.listings {
+    margin: auto;
+    text-align: center;
+}
+
+.listing {
+    box-sizing: border-box;
+    text-align: left;
+    display: inline-block;
+    padding: 30px 50px;
+    width: 350px;
+    margin: 15px;
+    margin-bottom: 50px;
+    border-radius: 8px;
+    border: 2px solid black;
+}
+
+.listing h2 {
+    height: 2.5em;
+}
+
+.preview {
+    height: 150px;
+    width: 250px;
+    text-align: center;
+}
+
+.preview>img {
+    object-fit: contain;
+    height: 150px;
+    width: 250px;
+}
+
+.no-cars {
+    margin: auto;
+    font-size: 30px;
+    text-align: center;
+}
+
+.data-info {
+    margin-top: 8px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.button-carDetails {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 10px;
+    width: 100px;
+    margin: 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}

@@ -1,0 +1,26 @@
+div.about {
+    display: block;
+    margin: auto;
+    background-color: #f3f3f2;
+    padding: 5em;
+    text-align: center;
+}
+
+.msg {
+    text-align: center;
+    font-family: 'Arial Narrow', sans-serif;
+    font-size: 1.8rem;
+    position: absolute;
+    left: 13%;
+    top: 40%;
+    width: 75%;
+  }
+
+a {
+  text-decoration: none;
+  color: #3990c7;
+}
+
+a:hover {
+  text-decoration: underline;
+}

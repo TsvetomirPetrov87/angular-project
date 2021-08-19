@@ -1,0 +1,10 @@
+<section id="main">
+    <div *ngIf="checkIfLogged" id="welcome-container">
+        <h1>Welcome To Civil Engineer Blog</h1>
+        <img class="img" src="/assets/home.jpg" alt="blogIntro">
+        <h2>To see all the posts click the link below:</h2>
+        <div>
+            <a routerLink="/posts" class="button">All Posts</a>
+        </div>
+    </div>
+</section>

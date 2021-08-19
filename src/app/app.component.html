@@ -1,0 +1,23 @@
+<div *ngIf="authenticated">Loading....</div>
+
+<ng-container *ngIf="!authenticated">
+  <app-header></app-header>
+
+  <router-outlet></router-outlet>
+
+  <app-footer></app-footer>
+  
+</ng-container>
+  
+  <!-- <app-about></app-about>
+
+  <app-create-post></app-create-post>
+
+  <ul>
+    <li *ngFor="let posts of posts">
+      {{ post.author }}
+    </li>
+  </ul>
+
+  <app-not-found></app-not-found> -->
+
