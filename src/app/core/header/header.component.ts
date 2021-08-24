@@ -13,8 +13,8 @@ export class HeaderComponent {
     private authService: AuthService,
     private router: Router) { }
 
-    get checkIfLogged(): boolean {
-      return this.authService.checkIfLogged;
+    get isLoggedIn(): boolean {
+      return this.authService.isLoggedIn();
     }
 
     // get email(): string {

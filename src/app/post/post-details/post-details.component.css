@@ -1,13 +1,13 @@
 .post-container {
+    
     margin: auto;
-    text-align: center;
     box-sizing: border-box;
     text-align: left;
     display: inline-block;
     padding: 20px 30px;
-    width: 400px;
-    margin: 20px;
-    margin-bottom: 50px;
+    width: 750px;
+    margin: 60px 600px;
+    margin-bottom: 20px;
     border-radius: 10px;
     border: 3px solid rgb(83, 187, 201);
 }
@@ -16,57 +16,45 @@
     font-size: 22px;
     height: 3.0em;
     justify-content: left;
+    text-align: left;
+    left: 0px;
     color: rgb(83, 187, 201);
 }
 
 .preview {
-    height: 250px;
-    width: 250px;
-    text-align: center;
+    height: 350px;
+    width: 350px;
+    text-align: left;
 }
 
 .preview>img {
     object-fit: contain;
-    height: 220px;
-    width: 330px;
+    height: 300px;
+    width: 680px;
 }
 
 .data-info {
-    margin-top: 30px;
+    margin-top: -30px;
 }
 
 h3 {
     font-size: 18px;
+    text-align: left;
+    left: 0px;
 }
 
 .data-buttons {
     text-align: center;
-    margin: 5px;
+    margin: 10px;
 }
 
-.buttonCreatePost {
-    background-color: rgb(105, 175, 128);
-    font-family: 'Arial Narrow', sans-serif;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    padding: 10px;
-    width: 110px;
-    margin: 15px 895px;
-    text-align: center;
-    display: inline-block;
-    font-size: 18px;
-    font-weight: bold;
-    position: relative;
-}
-
-.buttonPostDetails {
+.buttonBackToPosts {
     background-color: rgb(83, 187, 201);
     border: none;
     color: white;
     padding: 10px;
     width: 100px;
-    margin: 2px;
+    margin-top: 5px;
     text-align: center;
     text-decoration: none;
     display: inline-block;

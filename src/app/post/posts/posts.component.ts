@@ -13,9 +13,9 @@ export class PostsComponent {
 
   posts: IPost[] | any;
 
-  get checkIfLogged(): boolean {
-    return this.authService.checkIfLogged;
-  }
+  // get isLoggedIn(): boolean {
+  //   return this.authService.isLoggedIn;
+  // }
 
   constructor(
     private db: AngularFirestore,

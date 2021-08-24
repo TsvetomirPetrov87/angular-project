@@ -1,4 +1,5 @@
 <ng-container *ngIf="posts">
+    <button class="buttonCreatePost" routerLink="/create-post">CREATE POST</button>
     <h1>Blog Posts</h1>
     <div *ngFor="let post of posts" class="post-container">
         <div class="preview">
@@ -11,7 +12,7 @@
                 <h3>Author: {{post.author}}</h3>
             </div>
             <div class="data-buttons">
-                <a routerLink="/comments/:id" class="buttonPostDetails">Comment</a>
+                <a routerLink="/post-details/:id" class="buttonPostDetails">Details</a>
             </div>
         </div>
     </div>

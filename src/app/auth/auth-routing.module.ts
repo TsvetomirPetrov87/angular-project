@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 
 import { LoginComponent } from './login/login.component';
+import { MyPostsComponent } from './my-posts/my-posts.component';
 import { RegisterComponent } from './register/register.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 const routes: Routes = [
@@ -27,8 +27,8 @@ const routes: Routes = [
         // }
     },
     {
-        path: 'user-profile/:id',
-        component: UserProfileComponent,
+        path: 'my-posts/:id',
+        component: MyPostsComponent,
         // canActivate: [AuthGuard],
         // data : {
         //     authActivate: true,

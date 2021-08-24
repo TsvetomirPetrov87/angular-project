@@ -15,9 +15,9 @@ export class AuthGuard implements CanActivate {
         const { data: { 
                 authActivate,
                 authFailedActivateUrl }} = route;
-        if(typeof authActivate === 'boolean' && authActivate === this.authService.checkIfLogged) {
-            return true;
-        }
+        // if(typeof authActivate === 'boolean' && authActivate === this.authService.isLoggedIn) {
+        //     return true;
+        // }
         
         return this.router.parseUrl(authFailedActivateUrl || '/');
         

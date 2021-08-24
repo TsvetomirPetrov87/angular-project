@@ -21,7 +21,7 @@ body {
 
 h1 {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 15px;
     font-size: 50px;
 }
 
@@ -95,9 +95,17 @@ img {
     width: auto;
 }
 
-img.background {
+img.background-start-page {
     width: 100%;
-    height: 100%;
+    height: 80%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+img.background-not-found {
+    width: 100%;
+    height: 80%;
     display: block;
     margin: 0 auto;
     text-align: center;

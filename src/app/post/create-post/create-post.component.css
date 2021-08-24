@@ -1,126 +1,78 @@
 
-/*workshop
-.post-container a {
-    text-decoration: none;
-    color: inherit;
+.create-post-border .input {
+    margin-bottom: 2em;
+    border-radius: 1em;
+    width: 100%;
+    margin: auto;
+    margin-top: 2em;
+    padding: 1em;
+    font-size: 22px;
 }
 
-.post-container span {
-    font-weight: bold;
-}
-
-.post-container h2, p {
-    padding: 0.3em 0 0.2em;
+textarea {
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 1.5em;
     margin: 0;
 }
 
-.post-name-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.3em 0.5em;
-    border: 1px solid #999;
-    border-radius: 0.3em;
-    font-size: 0.8em;
-    margin-top: 1em;
-}
-
-.post-title {
-    padding: 0;
-}
-
-.post-name {
-    width: 100%;
-}
-
-.elements {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0.7rem;
-}
-
-.subscribers {
-    text-align: right;
-    flex-basis: 25%;
-}
-
-.subscribers button {
-    padding: 0.2rem 0.5rem;
-    border: none;
-    border-radius: 0.3rem;
-    color: white;
-    cursor: pointer;
-    width: 100%;
-}
-
-.subscribe {
-    background-color: green;
-}
-
-.unsubscribe {
-    background-color: red;
-}
-
-time {
-    font-weight: bold;
-}*/
-
-.listings {
+.fields {
     margin: auto;
     text-align: center;
-}
-
-.listing {
     box-sizing: border-box;
     text-align: left;
     display: inline-block;
     padding: 30px 50px;
-    width: 350px;
-    margin: 15px;
-    margin-bottom: 50px;
+    width: 550px;
+    margin: 30px 680px;
+    margin-bottom: 20px;
     border-radius: 8px;
     border: 2px solid black;
 }
 
-.listing h2 {
-    height: 2.5em;
+.fields h1 {
+    height: 3em;
+
 }
 
 .preview {
-    height: 150px;
+    height: 210px;
     width: 250px;
     text-align: center;
 }
 
 .preview>img {
     object-fit: contain;
-    height: 150px;
-    width: 250px;
-}
-
-.no-cars {
-    margin: auto;
-    font-size: 30px;
-    text-align: center;
+    height: 200px;
+    width: 450px;
 }
 
 .data-info {
     margin-top: 8px;
 }
 
-h3 {
+label {
     font-size: 20px;
 }
 
-.button-carDetails {
-    background-color: #4caf50;
+p.validation {
+    font-family: 'Arial Narrow', sans-serif;
+    text-align: left;
+    border-radius: 0.3em;
+    color: red;
+    padding-top: 0;
+}
+
+.buttonCreatePost {
+    font-family: 'Arial Narrow', sans-serif;
+    background-color: rgb(105, 175, 128);
     border: none;
     color: white;
     padding: 10px;
     width: 100px;
-    margin: 2px;
+    margin: 20px 60px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 18px;
 }

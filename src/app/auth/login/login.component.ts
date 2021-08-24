@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as firebase from 'firebase/app';
+import { emailValidator } from 'src/app/shared/validators';
 import { AuthService } from '../auth.service';
 
 
@@ -11,16 +13,30 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent {
 
+  email: string;
+  password: string;
+
   constructor(
+    private formBuilder: FormBuilder,
     private authService: AuthService,
     private activatedRoute: ActivatedRoute,
-    private router: Router) { }
+    private router: Router
+  ) { }
 
-    catchLogin(formLogin: NgForm): void {
-      const {username, password} = formLogin.value;
-      
-      
-    }
-  
+  formLogin = this.formBuilder.group({
+    email: ['', [Validators.required, emailValidator]],
+    password: ['', [Validators.required, Validators.minLength(6)]],
+  })
+
+  login(): void {
+    // this.authService.login(email, password).subscribe({
+    //   next: () => {
+    //     const redirectUrl = this.activatedRoute.snapshot.queryParams.redirectUrl || '/home';
+    //     this.router.navigate([redirectUrl]);
+    //   },
+    //   error: (err) => {
+    //     console.log(err);
+    //   }
+    // })
+  }
 }
-

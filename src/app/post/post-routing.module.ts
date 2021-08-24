@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../auth/guards/auth.guard';
 import { CreatePostComponent } from './create-post/create-post.component';
+import { PostDetailsComponent } from './post-details/post-details.component';
 import { PostsComponent } from './posts/posts.component';
 
 
@@ -13,10 +14,18 @@ const routes: Routes = [
     {
         path: 'create-post',
         component: CreatePostComponent,
-        canActivate: [AuthGuard],
-        data : {
-            authActivate: true,
-        }
+        // canActivate: [AuthGuard],
+        // data : {
+        //     authActivate: true,
+        // }
+    },
+    {
+        path: 'post-details/:postId',
+        component: PostDetailsComponent,
+        // canActivate: [AuthGuard],
+        // data : {
+        //     authActivate: true,
+        // }
     },
    
 ];

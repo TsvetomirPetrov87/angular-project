@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { IComment } from '../shared/models/comments';
 import { IPost } from '../shared/models/post';
 
 @Injectable({
@@ -10,7 +9,6 @@ import { IPost } from '../shared/models/post';
 export class PostService {
 
   post$: Observable<IPost[] | any>;
-  comment$: Observable<IComment[] | any>;
 
   constructor(private db: AngularFirestore) {}
 
@@ -22,7 +20,7 @@ export class PostService {
     return this.post$ = this.db.collection(`posts/${postId}`).valueChanges();
   }
 
-  getComments() {
-    return this.comment$ = this.db.collection('comments').valueChanges();
+  savePost(data: any) {
+    
   }
 }

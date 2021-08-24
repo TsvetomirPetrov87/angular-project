@@ -45,6 +45,13 @@ a {
     color: dodgerblue;
 }
 
+p.validation {
+    font-family: 'Arial Narrow', sans-serif;
+    text-align: left;
+    border-radius: 0.3em;
+    color: rgb(126, 38, 38);
+    padding-top: 0;
+}
 
 .register {
     padding: 16px;

@@ -1,29 +1,84 @@
-<section id="register">
-    <div class="container">
-        <form id="register-form">
+ <div class="container">
+    <!-- <div id="firebaseui-auth-container"> -->
+        <!-- <form [formGroup]="formRegister" id="register-form" method="post"
+            (ngSubmit)="register()"> -->
             <h1>Register</h1>
             <p>Please fill in this form to create an account.</p>
             <hr>
 
+
             <p>Username</p>
-            <input type="text" placeholder="Enter Username" name="username" required>
+            <label for="username"></label>
+            <input type="text" placeholder="Enter Username" name="username"
+                id="username">
+
+            <!-- <ng-container *ngIf="form.get('username').touched">
+                <p *ngIf="form.get('username').errors.required"
+                    class="validation">
+                    Username is required!
+                </p>
+                <p *ngIf="form.get('username').errors.minlength"
+                    class="validation">
+                    Username shoul be more than 5 symbols!
+                </p>
+            </ng-container> -->
+
 
             <p>Email</p>
-            <input type="text" placeholder="Enter Email" name="email" required>
+            <label for="email"></label>
+            <input type="text" placeholder="Enter Email" name="email" id="email">
+
+            <!-- <ng-container *ngIf="form.get('email').touched">
+                <p *ngIf="form.get('email').errors.required" class="validation">
+                    Email is required!
+                </p>
+                <p *ngIf="form.get('email').errors.invalidEmail"
+                    class="validation">
+                    Invalid email!
+                </p>
+            </ng-container> -->
+
 
             <p>Password</p>
-            <input type="password" placeholder="Enter Password" name="password" required>
+            <label for="password"></label>
+            <input type="password" placeholder="Enter Password" name="password"
+                id="password">
+
+            <!-- <ng-container *ngIf="form.get('password').touched">
+                <p *ngIf="form.get(password).errors.required"
+                    class="validation">
+                    Password is required!
+                </p>
+                <p *ngIf="form.get(password).errors.minlength(6)"
+                    class="validation">
+                    Password should be more than 6 characters!
+                </p>
+            </ng-container> -->
+
 
             <p>Repeat Password</p>
-            <input type="password" placeholder="Repeat Password" name="repeatPass" required>
+            <label for="repeatPass"></label>
+            <input type="password" placeholder="Repeat Password"
+                name="repeatPass" id="repeatPass">
             <hr>
 
+            <!-- <ng-container *ngIf="form.get('repeatPass').touched">
+                <p *ngIf="form.get(repeatPass).errors.required" class="error">
+                    Repeat Password is required!
+                </p>
+                <p *ngIf="form.get(repeatPass).errors.checkForTheSameValue"
+                    class="error">
+                    Repeat Password don't match Password!!
+                </p>
+            </ng-container> -->
+
+
             <input type="submit" class="registerbtn" value="Register">
-        </form>
+        <!-- </form> -->
         <div class="login">
             <p>Already have an account?
                 <a routerLink="/login">Login</a>.
             </p>
         </div>
-    </div>
-</section>
+    <!-- </div> -->
+</div>

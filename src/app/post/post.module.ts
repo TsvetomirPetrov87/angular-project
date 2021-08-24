@@ -4,20 +4,24 @@ import { CreatePostComponent } from './create-post/create-post.component';
 import { PostService } from './post.service';
 import { PostRoutingModule } from './post-routing.module';
 import { PostsComponent } from './posts/posts.component';
+import { PostDetailsComponent } from './post-details/post-details.component';
 
 
 
 @NgModule({
   declarations: [
     CreatePostComponent,
-    PostsComponent
+    PostsComponent,
+    PostDetailsComponent
   ],
   imports: [
     CommonModule, 
     PostRoutingModule
   ],
   exports: [
-    CreatePostComponent
+    PostsComponent,
+    CreatePostComponent, 
+    PostDetailsComponent
   ],
   providers: [
     PostService
