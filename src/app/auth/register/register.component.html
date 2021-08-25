@@ -1,39 +1,38 @@
- <div class="container">
-    <!-- <div id="firebaseui-auth-container"> -->
-        <!-- <form [formGroup]="formRegister" id="register-form" method="post"
-            (ngSubmit)="register()"> -->
+<div class="container">
+    <div id="firebaseui-auth-container">
+        <form [formGroup]="formRegister" id="register-form" method="post" (ngSubmit)="createUser(formRegister.value)" >
             <h1>Register</h1>
             <p>Please fill in this form to create an account.</p>
             <hr>
 
 
-            <p>Username</p>
-            <label for="username"></label>
-            <input type="text" placeholder="Enter Username" name="username"
-                id="username">
+            <p>Display Name</p>
+            <label for="displayName"></label>
+            <input type="text" placeholder="Enter Display Name" name="displayName"
+                id="displayName">
 
-            <!-- <ng-container *ngIf="form.get('username').touched">
-                <p *ngIf="form.get('username').errors.required"
-                    class="validation">
+            <!-- <ng-container *ngIf="form.get('displayName').touched">
+                <p *ngIf="form.get('displayName').errors.required"
+                    class="errors">
                     Username is required!
                 </p>
                 <p *ngIf="form.get('username').errors.minlength"
-                    class="validation">
-                    Username shoul be more than 5 symbols!
+                    class="errors">
+                    Username should be more than 5 symbols!
                 </p>
             </ng-container> -->
 
 
             <p>Email</p>
             <label for="email"></label>
-            <input type="text" placeholder="Enter Email" name="email" id="email">
+            <input type="text" placeholder="Enter Email" name="email" id="email" formControlName="email">
 
             <!-- <ng-container *ngIf="form.get('email').touched">
-                <p *ngIf="form.get('email').errors.required" class="validation">
+                <p *ngIf="form.get('email').errors.required" class="errors">
                     Email is required!
                 </p>
                 <p *ngIf="form.get('email').errors.invalidEmail"
-                    class="validation">
+                    class="errors">
                     Invalid email!
                 </p>
             </ng-container> -->
@@ -42,15 +41,15 @@
             <p>Password</p>
             <label for="password"></label>
             <input type="password" placeholder="Enter Password" name="password"
-                id="password">
+                id="password" formControlName="password">
 
             <!-- <ng-container *ngIf="form.get('password').touched">
                 <p *ngIf="form.get(password).errors.required"
-                    class="validation">
+                    class="errors">
                     Password is required!
                 </p>
                 <p *ngIf="form.get(password).errors.minlength(6)"
-                    class="validation">
+                    class="errors">
                     Password should be more than 6 characters!
                 </p>
             </ng-container> -->
@@ -74,11 +73,11 @@
 
 
             <input type="submit" class="registerbtn" value="Register">
-        <!-- </form> -->
+        </form>
         <div class="login">
             <p>Already have an account?
                 <a routerLink="/login">Login</a>.
             </p>
         </div>
-    <!-- </div> -->
+    </div>
 </div>

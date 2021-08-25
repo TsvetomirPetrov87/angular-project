@@ -3,12 +3,12 @@
         <form #postForm="ngForm" (ngSubmit)="createPost(postForm)" class="fields" id="create-form">
             <h2>Create Post</h2>
 
-            <div class="preview">
-                <img src="">
+            <!-- <div class="preview">
+                <img src={{data.imageUrl}}>
             </div>
-            <hr>
+            <hr> -->
 
-            <label for="title">Title: </label>
+            <label for="title">Title: {{postForm.title}}</label>
             <input #titleInput="ngModel" type="text" placeholder="Enter Title" name="title" ngModel required minlength="5">
             <ng-container *ngIf="titleInput.touched">
             <p *ngIf="titleInput.errors?.required" class="errors">
@@ -20,7 +20,7 @@
             </ng-container>
             <br>
 
-            <label for="author">Author: </label>
+            <label for="author">Author: {{postForm.author}}</label>
             <input #authorInput="ngModel" type="text" placeholder="Enter Author" name="author" ngModel required minlength="5">
             <ng-container *ngIf="authorInput.touched">
             <p *ngIf="authorInput.errors?.required" class="errors">
@@ -32,8 +32,8 @@
             </ng-container>
             <br>
 
-            <label for="publishedDate">Published Date: </label>
-            <input #dateInput="ngModel" type="text" placeholder="Enter Date" name="publishedDate" ngModel required>
+            <label for="publishedDate">Published Date: {{postForm.publishedDate}}</label>
+            <input #dateInput="ngModel" type="text" placeholder="yyyy-mm-dd" name="publishedDate" ngModel required>
             <ng-container *ngIf="dateInput.touched">
             <p *ngIf="dateInput.errors?.required" class="errors">
                 Published date is required!
@@ -41,7 +41,16 @@
             </ng-container>
             <br>
 
-            <label for="postContent">Content: </label>
+            <label for="language">Language: {{postForm.language}}</label>
+            <input #languageInput="ngModel" type="text" placeholder="Enter Language" name="language" ngModel required>
+            <ng-container *ngIf="languageInput.touched">
+            <p *ngIf="languageInput.errors?.required" class="errors">
+                Language is required!
+            </p>
+            </ng-container>
+            <br>
+
+            <label for="postContent">Content: {{postForm.content}}</label>
             <textarea #content="ngModel" type="text" name="postContent" id="postText" rows="15" class="create-post-content" ngModel required minlength="10"></textarea>
             <ng-container *ngIf="content.touched">
             <p *ngIf="content.errors?.required" class="errors">
@@ -59,74 +68,3 @@
         </form>
     </div>
     </div>
-
-
-
-
-
-
-<!-- <div class="container">
-    <div *ngIf="theme" class="theme-content">
-        <div class="theme-title">
-            <div class="theme-name-wrapper">
-                <div class="theme-name">
-                    <h2>{{theme!.themeName}}</h2>
-                    <p>Date: <time>{{theme!.created_at}}</time></p>
-                </div>
-                <div class="subscribers">
-                    <p>Subscribers: <span>{{theme!.subscribers.length}}</span></p>
-                    <button *ngIf="isLogged" class="subscribe">Subscribe</button>
-                    <button class="unsubscribe">Unsubscribe</button>
-                </div>
-            </div>
-        </div>
-        <div *ngFor="let post of theme!.posts" class="comment">
-            <header class="header">
-                <p><span>{{post.userId.username}}</span> posted on <time>2020-10-10 12:08:28</time></p>
-            </header>
-            <div class="comment-main">
-                <div class="userdetails">
-                    <img src="/assets/profile.png" alt="avatar">
-                </div>
-                <div class="post-content">
-                    <p>{{post.text}}</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure facere sint dolorem quam,
-                        accusantium ipsa veniam laudantium inventore aut, tenetur quibusdam doloribus. Incidunt odio
-                        nostrum facilis ipsum dolorem deserunt illum?</p>
-                </div>
-            </div>
-            <div class="footer">
-                <p><span>{{post.likes.length}}</span> likes</p>
-            </div>
-        </div>
-        <div class="comment">
-            <header class="header">
-                <p><span>Mark</span> posted on <time>2020-10-10 14:28:11</time></p>
-            </header>
-            <div class="comment-main">
-                <div class="userdetails">
-                    <img src="./profile.png" alt="avatar">
-                </div>
-                <div class="post-content">
-                    <p>Lorem ipsum dolor sit amet consectetur </p>
-                </div>
-            </div>
-            <div class="footer">
-                <p><span>3</span> likes</p>
-            </div>
-        </div>
-        <div class="answer-comment">
-            <p><span>currentUser</span> comment:</p>
-            <div class="answer">
-                <form>
-                    <textarea name="postText" id="comment" cols="30" rows="10"></textarea>
-                    <button>Post</button>
-                </form>
-            </div>
-        </div>
-
-    </div>
-</div> -->
-
-
-

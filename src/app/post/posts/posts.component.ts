@@ -13,9 +13,11 @@ export class PostsComponent {
 
   posts: IPost[] | any;
 
-  // get isLoggedIn(): boolean {
-  //   return this.authService.isLoggedIn;
-  // }
+  isLoggedIn(): boolean {
+    if(this.authService.isLoggedIn) {
+      return true;
+    }
+  }
 
   constructor(
     private authService: AuthService,

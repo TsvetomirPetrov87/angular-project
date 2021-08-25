@@ -45,7 +45,7 @@ a {
     color: dodgerblue;
 }
 
-p.validation {
+p.errors {
     font-family: 'Arial Narrow', sans-serif;
     text-align: left;
     border-radius: 0.3em;

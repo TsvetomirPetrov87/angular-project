@@ -17,6 +17,10 @@ export class HeaderComponent {
       return this.authService.isLoggedIn();
     }
 
+    logout(): void {
+      this.authService.logout();
+    }
+
     // get email(): string {
     //   return this.authService.user?.email;
     // }

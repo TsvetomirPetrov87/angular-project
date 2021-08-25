@@ -28,15 +28,7 @@ export class LoginComponent {
     password: ['', [Validators.required, Validators.minLength(6)]],
   })
 
-  login(): void {
-    // this.authService.login(email, password).subscribe({
-    //   next: () => {
-    //     const redirectUrl = this.activatedRoute.snapshot.queryParams.redirectUrl || '/home';
-    //     this.router.navigate([redirectUrl]);
-    //   },
-    //   error: (err) => {
-    //     console.log(err);
-    //   }
-    // })
+  login({ email, password }): void {
+    this.authService.login(email, password);
   }
 }

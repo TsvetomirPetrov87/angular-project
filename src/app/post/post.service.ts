@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
 import { IPost } from '../shared/models/post';
 
 @Injectable({
@@ -9,8 +10,12 @@ import { IPost } from '../shared/models/post';
 export class PostService {
 
   post$: Observable<IPost[] | any>;
+  data: IPost;
 
-  constructor(private db: AngularFirestore) { }
+  constructor(
+    private db: AngularFirestore,
+    private authService: AuthService
+    ) { }
 
   getPosts() {
     return this.post$ = this.db.collection('posts').get();
@@ -22,10 +27,12 @@ export class PostService {
 
   savePost(data: any) {
     return this.db.collection('posts').add({
-      title: '',
-      author: '',
-      publishedDate: '',
-      content: ''
+      title: data.title,
+      author: data.author,
+      publishedDate: data.publishedDate,
+      language: data.language,
+      //content: data.content,
+      userId: this.authService.userDetails.uid
     })
       .then((postRef) => {
         console.log("Post written with ID: ", postRef.id);
