@@ -5,6 +5,7 @@ import { PostService } from './post.service';
 import { PostRoutingModule } from './post-routing.module';
 import { PostsComponent } from './posts/posts.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -16,12 +17,14 @@ import { PostDetailsComponent } from './post-details/post-details.component';
   ],
   imports: [
     CommonModule, 
-    PostRoutingModule
+    PostRoutingModule,
+    FormsModule
   ],
   exports: [
     PostsComponent,
     CreatePostComponent, 
-    PostDetailsComponent
+    PostDetailsComponent,
+    FormsModule
   ],
   providers: [
     PostService

@@ -20,7 +20,7 @@ const routes: Routes = [
         // }
     },
     {
-        path: 'post-details/:postId',
+        path: 'post-details/:id',
         component: PostDetailsComponent,
         // canActivate: [AuthGuard],
         // data : {

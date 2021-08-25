@@ -5,6 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { AuthService } from './auth.service';
 import { AuthRoutingModule } from './auth-routing.module';
 import { MyPostsComponent } from './my-posts/my-posts.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -15,12 +16,14 @@ import { MyPostsComponent } from './my-posts/my-posts.component';
     MyPostsComponent],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    ReactiveFormsModule
   ],
   exports: [
     LoginComponent,
     RegisterComponent,
-    MyPostsComponent
+    MyPostsComponent,
+    ReactiveFormsModule
   ],
   providers: [
     AuthService

@@ -3,16 +3,16 @@
     <h1>Blog Posts</h1>
     <div *ngFor="let post of posts" class="post-container">
         <div class="preview">
-            <img src={{post.imageUrl}}>
+            <img src={{post.data().imageUrl}}>
         </div>
-        <h2>{{post.title}}</h2>
+        <h2>{{post.data().title}}</h2>
         <div class="info">
             <div class="data-info">
-                <h3>Published Date: {{post.publishedDate}}</h3>
-                <h3>Author: {{post.author}}</h3>
+                <h3>Published Date: {{post.data().publishedDate}}</h3>
+                <h3>Author: {{post.data().author}}</h3>
             </div>
             <div class="data-buttons">
-                <a routerLink="/post-details/:id" class="buttonPostDetails">Details</a>
+                <a routerLink="/post-details/{{post.id}}" class="buttonPostDetails">Details</a>
             </div>
         </div>
     </div>

@@ -1,15 +1,15 @@
 <ng-container>
     <div class="post-container">
         <div class="preview">
-            <img src="">
+            <img src="{{post.imageUrl}}">
         </div>
-        <h2>Title: </h2>
+        <h2>Title: {{post.title}}</h2>
         <div class="info">
             <div class="data-info">
-                <h3>Content: </h3>
-                <h3>Published Date: </h3>
-                <h3>Author: </h3>
-                <h3>Language: </h3>
+                <h3>Published Date: {{post.publishedDate}}</h3>
+                <h3>Author: {{post.author}}</h3>
+                <h3>Language: {{post.Language}}</h3>
+                <h3>Content: {{post.content}}</h3>
             </div>
             <div class="data-buttons">
                 <a routerLink="/posts" class="buttonBackToPosts">Back</a>

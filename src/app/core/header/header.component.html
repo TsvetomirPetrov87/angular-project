@@ -5,15 +5,15 @@
         <span> Civil Engineer Blog</span>
         <div class="navbar">
              
-            <ul *ngIf="!isLoggedIn">
+            <ul *ngIf="isLoggedIn">
                 <li><a routerLink="/login">LOGIN</a></li>
                 <li><a routerLink="/register">REGISTER</a></li>
             </ul>
-            <ul *ngIf="isLoggedIn">
+            <ul *ngIf="!isLoggedIn">
                 <li><a routerLink="/user-profile">WELCOME, {{email}}</a></li>
                 <li><a (click)="logout()">LOGOUT</a></li>
             </ul>
-            <ul *ngIf="isLoggedIn">
+            <ul *ngIf="!isLoggedIn">
             <li><a routerLink="/my-posts/:id">My Posts</a></li>
         </ul>
         </div>

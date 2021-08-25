@@ -18,12 +18,11 @@ export class PostsComponent {
   // }
 
   constructor(
-    private db: AngularFirestore,
     private authService: AuthService,
     private postService: PostService) {
 
     this.posts = undefined;
-    this.postService.getPosts().subscribe(posts => this.posts = posts)
+    this.postService.getPosts().subscribe(posts => this.posts = posts.docs)
       
   }
 

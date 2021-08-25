@@ -10,17 +10,28 @@ export class PostService {
 
   post$: Observable<IPost[] | any>;
 
-  constructor(private db: AngularFirestore) {}
+  constructor(private db: AngularFirestore) { }
 
   getPosts() {
-    return this.post$ = this.db.collection('posts').valueChanges();
+    return this.post$ = this.db.collection('posts').get();
   }
 
-  getPost(postId: string) {
-    return this.post$ = this.db.collection(`posts/${postId}`).valueChanges();
+  getPostById(postId: string) {
+    return this.post$ = this.db.collection('posts').doc(postId).get();
   }
 
   savePost(data: any) {
-    
+    return this.db.collection('posts').add({
+      title: '',
+      author: '',
+      publishedDate: '',
+      content: ''
+    })
+      .then((postRef) => {
+        console.log("Post written with ID: ", postRef.id);
+      })
+      .catch((error) => {
+        console.error("Error adding document: ", error);
+      });
   }
 }
