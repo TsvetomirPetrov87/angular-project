@@ -27,8 +27,8 @@ export class MyPostsComponent {
     private authService: AuthService,
     private postService: PostService) {
 
-    // this.posts = undefined;
-    // this.postService.getPosts().subscribe(posts => this.posts = posts.docs)
+    this.posts = undefined;
+    this.postService.getMyPosts().then(posts => this.posts = posts.docs)
       
   }
 }

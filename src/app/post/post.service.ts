@@ -58,7 +58,7 @@ export class PostService {
     });
   }
 
-  getMyPosts(userId: string) {
-    return this.post$ = this.db.collection('posts').doc(userId).get();
+  getMyPosts() {
+    return this.db.collection('posts').ref.where("userId", "==", this.authService.userDetails.uid).get()
   }
 }

@@ -6,7 +6,6 @@ import { checkForTheSameValue, emailValidator } from 'src/app/shared/validators'
 import * as firebase from 'firebase';
 
 
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
