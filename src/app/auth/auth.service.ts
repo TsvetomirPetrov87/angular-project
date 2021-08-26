@@ -37,7 +37,6 @@ export class AuthService {
   login(data: {email: string, password: string}) {
     return this.firebaseAuth.auth.signInWithEmailAndPassword(data.email, data.password)
       .then((userCredential) => {
-        this.userDetails = userCredential.user;
         this.router.navigate(['/home']);
       })
   }
@@ -47,7 +46,9 @@ export class AuthService {
         data.email,
         data.password
     ).then((userCredential) => {
-      this.userDetails = userCredential.user;
+      userCredential.user.updateProfile({
+        displayName: data.displayName,
+      });
       this.router.navigate(['/login']);
     })
     .catch((error) => {

@@ -9,7 +9,7 @@
                 <li><a routerLink="/register">REGISTER</a></li>
             </ul>
             <ul *ngIf="isLoggedIn">
-                <li><a>WELCOME, {{authService.userDetails.email}}</a></li>
+                <li><a>WELCOME, {{authService.userDetails.displayName}}</a></li>
                 <li><a (click)="logout()">LOGOUT</a></li>
             </ul>
             <ul *ngIf="isLoggedIn">

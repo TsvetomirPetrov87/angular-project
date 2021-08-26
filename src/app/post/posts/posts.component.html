@@ -1,9 +1,6 @@
 <ng-container *ngIf="posts">
-    <div *ngIf="isLoggedIn">
+    <div *ngIf="isLoggedIn()">
         <button type="button" class="buttonCreatePost" routerLink="/create-post">CREATE POST</button>
-    </div>
-    <div *ngIf="!isLoggedIn">
-        <input type="submit" routerLink="/create-post" value="CREATE POST">
     </div>
     
     <h1>Blog Posts</h1>
