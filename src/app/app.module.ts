@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorage, AngularFireStorageModule } from '@angular/fire/storage';
 import { FirebaseAuth } from '@angular/fire';
 
 import { environment } from 'src/environments/environment';
@@ -32,8 +33,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    AngularFireStorageModule,
     CoreModule,
-    SharedModule, 
+    SharedModule,
     AuthModule,
     PostModule,
     FormsModule,

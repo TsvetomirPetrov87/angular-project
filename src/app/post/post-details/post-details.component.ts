@@ -27,11 +27,3 @@ export class PostDetailsComponent {
    }
 
 }
-
-// this.db.collection('posts').get().toPromise().then((snapshot) => {
-    //   snapshot.forEach((doc) => {
-    //     console.log(doc.id);
-        
-    //   })
-    //   console.log(snapshot.docs);
-    // })

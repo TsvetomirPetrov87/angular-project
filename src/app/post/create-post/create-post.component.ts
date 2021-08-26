@@ -35,4 +35,11 @@ export class CreatePostComponent {
       })
   }
 
+  onFileSelected(event) :void {
+    const file = event.target.files[0];
+
+    if (file) {
+      this.postService.fileToUpload = file;
+    }
+  }
 }

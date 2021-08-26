@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import * as firebase from 'firebase';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 import { IPost } from '../shared/models/post';
+import { finalize } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +13,13 @@ import { IPost } from '../shared/models/post';
 export class PostService {
 
   post$: Observable<IPost[] | any>;
-  data: IPost[];
+  data: IPost;
+  fileToUpload: File | null = null;
 
   constructor(
     private db: AngularFirestore,
-    private authService: AuthService
+    private authService: AuthService,
+    private storage: AngularFireStorage
     ) { }
 
   getPosts() {
@@ -27,25 +31,34 @@ export class PostService {
   }
 
   savePost(data: any) {
-    return this.db.collection('posts').add({
-      title: data.title,
-      author: data.author,
-      publishedDate: data.publishedDate,
-      language: data.language,
-      content: data.content,
-      userId: this.authService.userDetails.uid
-    })
-      .then((postRef) => {
-        console.log("Post written with ID: ", postRef.id);
+    const filePath = `images/${this.fileToUpload.name}`;
+    const fileRef = this.storage.ref(filePath);
+    const uploadTask =
+      this.storage.upload(filePath, this.fileToUpload);
+
+    return uploadTask.snapshotChanges().toPromise().then(() => {
+      return fileRef.getDownloadURL().toPromise().then((url) => {
+        console.log(url)
+        return this.db.collection('posts').add({
+        title: data.title,
+        author: this.authService.userDetails.displayName,
+        publishedDate: (new Date()).toISOString(),
+        language: data.language,
+        content: data.content,
+        imageUrl: url,
+        userId: this.authService.userDetails.uid
       })
-      .catch((error) => {
-        console.error("Error adding document: ", error);
-      });
+        .then((postRef) => {
+          console.log("Post written with ID: ", postRef.id);
+        })
+        .catch((error) => {
+          console.error("Error adding document: ", error);
+        })
+      })
+    });
   }
 
   getMyPosts(userId: string) {
     return this.post$ = this.db.collection('posts').doc(userId).get();
-    
-   
   }
 }

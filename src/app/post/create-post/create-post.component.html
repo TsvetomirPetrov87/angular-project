@@ -1,70 +1,55 @@
 <div class="container">
-        <div class="create-post-border">
-        <form #postForm="ngForm" (ngSubmit)="createPost(postForm)" class="fields" id="create-form">
+    <div class="create-post-border">
+        <form #postForm="ngForm" (ngSubmit)="createPost(postForm)"
+            class="fields" id="create-form">
             <h2>Create Post</h2>
 
-            <!-- <div class="preview">
-                <img src={{data.imageUrl}}>
-            </div>
-            <hr> -->
-
             <label for="title">Title: {{postForm.title}}</label>
-            <input #titleInput="ngModel" type="text" placeholder="Enter Title" name="title" ngModel required minlength="5">
+            <input #titleInput="ngModel" type="text" placeholder="Enter Title"
+                name="title" ngModel required minlength="5">
             <ng-container *ngIf="titleInput.touched">
-            <p *ngIf="titleInput.errors?.required" class="errors">
-                Post title is required!
-            </p>
-            <p *ngIf="titleInput.errors?.minlength" class="errors">
-                Post title must be at least 5 characters long.
-            </p>
+                <p *ngIf="titleInput.errors?.required" class="errors">
+                    Post title is required!
+                </p>
+                <p *ngIf="titleInput.errors?.minlength" class="errors">
+                    Post title must be at least 5 characters long.
+                </p>
             </ng-container>
             <br>
-
-            <label for="author">Author: {{postForm.author}}</label>
-            <input #authorInput="ngModel" type="text" placeholder="Enter Author" name="author" ngModel required minlength="5">
-            <ng-container *ngIf="authorInput.touched">
-            <p *ngIf="authorInput.errors?.required" class="errors">
-                Author is required!
-            </p>
-            <p *ngIf="authorInput.errors?.minlength" class="errors">
-                Author name must be at least 5 characters long.
-            </p>
-            </ng-container>
-            <br>
-
-            <label for="publishedDate">Published Date: {{postForm.publishedDate}}</label>
-            <input #dateInput="ngModel" type="text" placeholder="yyyy-mm-dd" name="publishedDate" ngModel required>
-            <ng-container *ngIf="dateInput.touched">
-            <p *ngIf="dateInput.errors?.required" class="errors">
-                Published date is required!
-            </p>
-            </ng-container>
-            <br>
-
+        
             <label for="language">Language: {{postForm.language}}</label>
-            <input #languageInput="ngModel" type="text" placeholder="Enter Language" name="language" ngModel required>
+            <input #languageInput="ngModel" type="text" placeholder="Enter
+                Language" name="language" ngModel required>
             <ng-container *ngIf="languageInput.touched">
-            <p *ngIf="languageInput.errors?.required" class="errors">
-                Language is required!
-            </p>
+                <p *ngIf="languageInput.errors?.required" class="errors">
+                    Language is required!
+                </p>
             </ng-container>
+            <br>
+
+            <label for="postImage">Image</label>
+            <input type="file" placeholder="Add image" name="image"
+                (change)="onFileSelected($event)">
             <br>
 
             <label for="content">Content: {{postForm.content}}</label>
-            <textarea #content="ngModel" type="text" name="content" id="content" rows="15" class="create-post-content" ngModel required minlength="10"></textarea>
+            <textarea #content="ngModel" type="text" name="content"
+                id="content" rows="15" class="create-post-content" ngModel
+                required minlength="10"></textarea>
             <ng-container *ngIf="content.touched">
-            <p *ngIf="content.errors?.required" class="errors">
-                Post content is required!
-            </p>
-            <p *ngIf="content.errors?.minlength" class="errors">
-                Post content must be at least 10 characters long.
-            </p>
+                <p *ngIf="content.errors?.required" class="errors">
+                    Post content is required!
+                </p>
+                <p *ngIf="content.errors?.minlength" class="errors">
+                    Post content must be at least 10 characters long.
+                </p>
             </ng-container>
             <br>
 
             <hr>
             <input type="submit" class="buttonCreatePost" value="Create">
-            <input type="submit" routerLink="/posts" class="buttonCreatePost" value="Cancel">
+            <input type="submit" routerLink="/posts" class="buttonCreatePost"
+                value="Cancel">
         </form>
     </div>
-    </div>
+</div>

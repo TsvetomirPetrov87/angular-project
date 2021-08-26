@@ -29,7 +29,7 @@ export class RegisterComponent {
 
   createUser(data: { displayName, email, password, repeatPass }): void {
     this.authService.register(data).then(() => {
-      this.router.navigate(['/login'])
+      this.router.navigate(['/posts'])
     })
       .catch(err => {
         console.log(err);
