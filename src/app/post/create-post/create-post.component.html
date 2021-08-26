@@ -50,8 +50,8 @@
             </ng-container>
             <br>
 
-            <label for="postContent">Content: {{postForm.content}}</label>
-            <textarea #content="ngModel" type="text" name="postContent" id="postText" rows="15" class="create-post-content" ngModel required minlength="10"></textarea>
+            <label for="content">Content: {{postForm.content}}</label>
+            <textarea #content="ngModel" type="text" name="content" id="content" rows="15" class="create-post-content" ngModel required minlength="10"></textarea>
             <ng-container *ngIf="content.touched">
             <p *ngIf="content.errors?.required" class="errors">
                 Post content is required!

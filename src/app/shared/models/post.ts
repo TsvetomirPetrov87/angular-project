@@ -1,13 +1,13 @@
 export interface IPost {
-    author: string
     title: string
-    content: string
+    author: string
     publishedDate: string
     imageUrl: string
     language: string
+    content: string
     userId: string
     postId: string
-    comments: string[]
+    //comments: string[]
 }
 
 

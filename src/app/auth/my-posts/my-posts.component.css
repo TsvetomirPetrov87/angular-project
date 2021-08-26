@@ -44,29 +44,13 @@ h3 {
     margin: 5px;
 }
 
-.buttonCreatePost {
-    background-color: rgb(105, 175, 128);
-    font-family: 'Arial Narrow', sans-serif;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    padding: 10px;
-    width: 110px;
-    margin: 15px 895px;
-    text-align: center;
-    display: inline-block;
-    font-size: 18px;
-    font-weight: bold;
-    position: relative;
-}
-
-.buttonPostDetails {
+.buttonBackToPosts {
     background-color: rgb(83, 187, 201);
     border: none;
     color: white;
     padding: 10px;
     width: 100px;
-    margin: 2px;
+    margin-top: 5px;
     text-align: center;
     text-decoration: none;
     display: inline-block;

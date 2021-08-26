@@ -17,4 +17,9 @@
     </div>
 </ng-container>
 
-<ng-container *ngIf="!posts">Soon...</ng-container>
+<ng-container *ngIf="!posts">
+    <h1>This customer has no posts</h1>
+    <div class="data-buttons">
+        <a routerLink="/posts" class="buttonBackToPosts">Back</a>
+    </div>
+</ng-container>

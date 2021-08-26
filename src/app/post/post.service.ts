@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import * as firebase from 'firebase';
 import { Observable } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 import { IPost } from '../shared/models/post';
@@ -10,7 +11,7 @@ import { IPost } from '../shared/models/post';
 export class PostService {
 
   post$: Observable<IPost[] | any>;
-  data: IPost;
+  data: IPost[];
 
   constructor(
     private db: AngularFirestore,
@@ -31,7 +32,7 @@ export class PostService {
       author: data.author,
       publishedDate: data.publishedDate,
       language: data.language,
-      //content: data.content,
+      content: data.content,
       userId: this.authService.userDetails.uid
     })
       .then((postRef) => {
@@ -40,5 +41,11 @@ export class PostService {
       .catch((error) => {
         console.error("Error adding document: ", error);
       });
+  }
+
+  getMyPosts(userId: string) {
+    return this.post$ = this.db.collection('posts').doc(userId).get();
+    
+   
   }
 }

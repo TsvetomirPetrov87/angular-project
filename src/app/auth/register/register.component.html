@@ -1,6 +1,6 @@
 <div class="container">
     <div id="firebaseui-auth-container">
-        <form [formGroup]="formRegister" id="register-form" method="post" (ngSubmit)="createUser(formRegister.value)" >
+        <form [formGroup]="formRegister" id="register-form" method="post" (ngSubmit)="createUser(formRegister.value)">
             <h1>Register</h1>
             <p>Please fill in this form to create an account.</p>
             <hr>
@@ -9,33 +9,31 @@
             <p>Display Name</p>
             <label for="displayName"></label>
             <input type="text" placeholder="Enter Display Name" name="displayName"
-                id="displayName">
+                id="displayName" formControlName="displayName">
 
-            <!-- <ng-container *ngIf="form.get('displayName').touched">
-                <p *ngIf="form.get('displayName').errors.required"
-                    class="errors">
-                    Username is required!
+            <ng-container *ngIf="formRegister.get('displayName')?.touched">
+                <p *ngIf="formRegister.get('displayName')?.errors?.required" class="errors">
+                    Display name is required!
                 </p>
-                <p *ngIf="form.get('username').errors.minlength"
+                <p *ngIf="formRegister.get('username')?.errors?.minlength"
                     class="errors">
-                    Username should be more than 5 symbols!
+                    Display name should be more than 5 symbols!
                 </p>
-            </ng-container> -->
+            </ng-container>
 
 
             <p>Email</p>
             <label for="email"></label>
             <input type="text" placeholder="Enter Email" name="email" id="email" formControlName="email">
 
-            <!-- <ng-container *ngIf="form.get('email').touched">
-                <p *ngIf="form.get('email').errors.required" class="errors">
+            <ng-container *ngIf="formRegister.get('email')?.touched">
+                <p *ngIf="formRegister.get('email')?.errors?.required" class="errors">
                     Email is required!
                 </p>
-                <p *ngIf="form.get('email').errors.invalidEmail"
-                    class="errors">
+                <p *ngIf="formRegister.get('email')?.errors?.invalidEmail" class="errors">
                     Invalid email!
                 </p>
-            </ng-container> -->
+            </ng-container>
 
 
             <p>Password</p>
@@ -43,16 +41,14 @@
             <input type="password" placeholder="Enter Password" name="password"
                 id="password" formControlName="password">
 
-            <!-- <ng-container *ngIf="form.get('password').touched">
-                <p *ngIf="form.get(password).errors.required"
-                    class="errors">
+            <ng-container *ngIf="formRegister.get('password')?.touched">
+                <p *ngIf="formRegister.get('password')?.errors?.required" class="errors">
                     Password is required!
                 </p>
-                <p *ngIf="form.get(password).errors.minlength(6)"
-                    class="errors">
+                <p *ngIf="formRegister.get('password')?.errors?.minlength" class="errors">
                     Password should be more than 6 characters!
                 </p>
-            </ng-container> -->
+            </ng-container>
 
 
             <p>Repeat Password</p>
@@ -61,17 +57,15 @@
                 name="repeatPass" id="repeatPass">
             <hr>
 
-            <!-- <ng-container *ngIf="form.get('repeatPass').touched">
-                <p *ngIf="form.get(repeatPass).errors.required" class="error">
+            <ng-container *ngIf="formRegister.get('repeatPass')?.touched">
+                <p *ngIf="formRegister.get('repeatPass')?.errors?.required" class="errors">
                     Repeat Password is required!
                 </p>
-                <p *ngIf="form.get(repeatPass).errors.checkForTheSameValue"
-                    class="error">
+                <!-- <p *ngIf="formRegister.get('repeatPass')?.errors?.checkForTheSameValue" class="errors">
                     Repeat Password don't match Password!!
-                </p>
-            </ng-container> -->
-
-
+                </p> -->
+            </ng-container>
+            
             <input type="submit" class="registerbtn" value="Register">
         </form>
         <div class="login">

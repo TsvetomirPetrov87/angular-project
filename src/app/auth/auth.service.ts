@@ -34,21 +34,21 @@ export class AuthService {
     
   }
 
-  login(email: string, password: string) {
-    return this.firebaseAuth.auth.signInWithEmailAndPassword(email, password)
+  login(data: {email: string, password: string}) {
+    return this.firebaseAuth.auth.signInWithEmailAndPassword(data.email, data.password)
       .then((userCredential) => {
         this.userDetails = userCredential.user;
         this.router.navigate(['/home']);
       })
   }
 
-  register(email: string, password: string) {
+  register(data: {displayName: string, email: string, password: string, repeatPass: string}) {
     return this.firebaseAuth.auth.createUserWithEmailAndPassword(
-      email,
-      password
+        data.email,
+        data.password
     ).then((userCredential) => {
       this.userDetails = userCredential.user;
-      this.router.navigate(['/home']);
+      this.router.navigate(['/login']);
     })
     .catch((error) => {
       console.log(error);

@@ -5,7 +5,7 @@ export function emailValidator(control: AbstractControl): ValidationErrors | nul
         return null;
     }
     
-    return /^[a-zA-Z0-9\.-]@(gmail|yahoo|outlook|jabse)\.com$/.test(control.value) ? null : {
+    return /^[a-zA-Z0-9\.-]{3,}@(gmail|yahoo|outlook|abv|jabse)\.(com|bg)$/.test(control.value) ? null : {
         invalidEmail: true
     }
 }

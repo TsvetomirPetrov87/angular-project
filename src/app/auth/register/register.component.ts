@@ -4,7 +4,7 @@ import { AuthService } from '../auth.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { checkForTheSameValue, emailValidator } from 'src/app/shared/validators';
 import * as firebase from 'firebase';
-import { stringify } from '@angular/compiler/src/util';
+
 
 
 @Component({
@@ -21,25 +21,18 @@ export class RegisterComponent {
   ) { }
 
   formRegister = this.formBuilder.group({
-    //  username: ['', [Validators.required, Validators.minLength(5)]],
-     email: ['', [Validators.required, emailValidator]],
-     password: ['', [Validators.required, Validators.minLength(6)]],
-     //repeatPass: ['', [Validators.required, checkForTheSameValue()]]
+    displayName: ['', [Validators.required, Validators.minLength(5)]],
+    email: ['', [Validators.required, emailValidator]],
+    password: ['', [Validators.required, Validators.minLength(6)]],
+    repeatPass: ['', [Validators.required]]
   });
 
-  createUser({ email, password }): void {
-    this.authService.register(email, password);
+  createUser(data: { displayName, email, password, repeatPass }): void {
+    this.authService.register(data).then(() => {
+      this.router.navigate(['/login'])
+    })
+      .catch(err => {
+        console.log(err);
+      })
   }
-
-   // register(): void {
-  //   if (this.formRegister.invalid) {
-  //     return;
-  //   }
-
-  //   this.authService.register(this.formRegister.value).subscribe({
-  //     next: () => { this.router.navigate(['/'])},
-  //     error: (err) => { console.log(err);
-  //     }
-  //   })
-  // }
 }

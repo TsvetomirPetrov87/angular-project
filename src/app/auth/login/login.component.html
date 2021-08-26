@@ -9,28 +9,28 @@
            <label for="email"></label>
            <input type="text" placeholder="Enter Email" name="email" id="email" formControlName="email">
 
-           <!-- <ng-container *ngIf="form.get('email').touched">
-               <p *ngIf="form.get('email')?.errors?.required" class="errors">
+           <ng-container *ngIf="formLogin.get('email')?.touched">
+               <p *ngIf="formLogin.get('email')?.errors?.required" class="errors">
                    Email is required!
                </p>
-               <p *ngIf="form.get('email')?.errors?.invalidEmail" class="errors">
+               <p *ngIf="formLogin.get('email')?.errors?.invalidEmail" class="errors">
                    Invalid email!
                </p>
-           </ng-container> -->
+           </ng-container>
 
 
            <p>Password</p>
            <label for="password"></label>
            <input type="password" placeholder="Enter Password" name="password" id="password" formControlName="password">
            
-           <!-- <ng-container *ngIf="formLogin.get('password')?.touched">
-               <p *ngIf="formLogin.get(password)?.errors?.required" class="errors">
+           <ng-container *ngIf="formLogin.get('password')?.touched">
+               <p *ngIf="formLogin.get('password')?.errors?.required" class="errors">
                    Password is required!
                </p>
-               <p *ngIf="formLogin.get(password)?.errors?.minlength(6)" class="errors">
+               <p *ngIf="formLogin.get('password')?.errors?.minlength" class="errors">
                    Password should be more than 6 characters!
                </p>
-           </ng-container> -->
+           </ng-container>
            
            <input type="submit" class="registerbtn" value="Login">
        </form>

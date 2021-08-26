@@ -19,7 +19,6 @@ export class LoginComponent {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private activatedRoute: ActivatedRoute,
     private router: Router
   ) { }
 
@@ -28,7 +27,7 @@ export class LoginComponent {
     password: ['', [Validators.required, Validators.minLength(6)]],
   })
 
-  login({ email, password }): void {
-    this.authService.login(email, password);
+  login(data: { email, password }): void {
+    this.authService.login(data);
   }
 }
