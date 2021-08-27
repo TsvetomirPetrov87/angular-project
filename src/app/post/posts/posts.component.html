@@ -11,7 +11,7 @@
         <h2>{{post.data().title}}</h2>
         <div class="info">
             <div class="data-info">
-                <h3>Published Date: {{post.data().publishedDate}}</h3>
+                <h3>Published Date: {{postService.formatDate(post.data().publishedDate)}}</h3>
                 <h3>Author: {{post.data().author}}</h3>
             </div>
             <div class="data-buttons">

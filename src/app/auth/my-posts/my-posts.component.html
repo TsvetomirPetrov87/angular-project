@@ -11,15 +11,16 @@
                 <h3>Author: {{post.data().author}}</h3>
             </div>
             <div class="data-buttons">
-                <a routerLink="/post-details/{{post.id}}" class="buttonPostDetails">Details</a>
+                <a routerLink="/post-details/{{post.id}}"
+                    class="buttonPostDetails">Details</a>
             </div>
         </div>
     </div>
 </ng-container>
 
 <ng-container *ngIf="!posts">
-    <h1>This customer has no posts</h1>
-    <div class="data-buttons">
-        <a routerLink="/posts" class="buttonBackToPosts">Back</a>
-    </div>
+        <h1>This customer has no posts</h1>
+        <div class="data-buttons">
+            <a routerLink="/posts" class="buttonBackToPosts">Back</a>
+        </div>
 </ng-container>

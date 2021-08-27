@@ -64,4 +64,9 @@ export class PostService {
   updatePostClaps(postId, claps) {
     return this.db.collection('posts').doc(postId).set({claps},{merge: true})
   }
+
+  formatDate(date): string {
+    return (new Date(date)).toLocaleDateString();
+  }
+  
 }

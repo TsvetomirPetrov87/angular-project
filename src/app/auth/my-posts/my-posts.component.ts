@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { PostService } from 'src/app/post/post.service';
 import { IPost } from 'src/app/shared/models/post';
 import { AuthService } from '../auth.service';
@@ -18,7 +17,6 @@ export class MyPostsComponent {
   }
 
   constructor(
-    private db: AngularFirestore,
     private authService: AuthService,
     private postService: PostService) {
 
