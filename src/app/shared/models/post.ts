@@ -6,6 +6,7 @@ export interface IPost {
     language: string
     content: string
     userId: string
+    claps?: string[]
 }
 
 

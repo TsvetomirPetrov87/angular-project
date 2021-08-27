@@ -9,7 +9,3 @@ export function emailValidator(control: AbstractControl): ValidationErrors | nul
         invalidEmail: true
     }
 }
-
-export function checkForTheSameValue() {
-
-}

@@ -59,3 +59,21 @@ h3 {
     display: inline-block;
     font-size: 18px;
 }
+
+.claps-container {
+    margin-top: 10px;
+  }
+  
+.claps-button {
+    width: 30px;
+    height: 30px;
+}
+  
+.claps-button :hover {
+    cursor: pointer;
+}
+  
+.claps-number {
+    vertical-align: super;
+    margin-left: 2px;
+}

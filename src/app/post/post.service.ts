@@ -34,6 +34,7 @@ export class PostService {
     const uploadTask = this.storage.upload(filePath, this.fileToUpload);
 
     return uploadTask.snapshotChanges().toPromise().then(() => {
+      this.fileToUpload = null;
       return fileRef.getDownloadURL().toPromise().then((url) => {
         console.log(url)
 
@@ -58,5 +59,9 @@ export class PostService {
 
   getMyPosts() {
     return this.db.collection('posts').ref.where("userId", "==", this.authService.userDetails.uid).get();
+  }
+
+  updatePostClaps(postId, claps) {
+    return this.db.collection('posts').doc(postId).set({claps},{merge: true})
   }
 }

@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { FormBuilder, Validators } from '@angular/forms';
-import { checkForTheSameValue, emailValidator } from 'src/app/shared/validators';
+import { emailValidator } from 'src/app/shared/validators';
+import { Subject } from 'rxjs';
 
 
 @Component({
@@ -11,6 +12,8 @@ import { checkForTheSameValue, emailValidator } from 'src/app/shared/validators'
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
+
+ killSubscription = new Subject();
 
   constructor(
     private formBuilder: FormBuilder,
