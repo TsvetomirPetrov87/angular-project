@@ -116,3 +116,13 @@ img.logo {
     padding: 0.5em;
     float: left;
 }
+
+.root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.root > :nth-last-child(2) {
+    flex: 2;
+}

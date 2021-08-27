@@ -1,24 +1,24 @@
-<ng-container *ngIf="posts">
-    <div *ngIf="isLoggedIn()">
-        <button type="button" class="buttonCreatePost" routerLink="/create-post">CREATE POST</button>
-    </div>
-    
-    <h1>Blog Posts</h1>
-    <div *ngFor="let post of posts" class="post-container">
-        <div class="preview">
-            <img src={{post.data().imageUrl}}>
-        </div>
-        <h2>{{post.data().title}}</h2>
-        <div class="info">
-            <div class="data-info">
-                <h3>Published Date: {{postService.formatDate(post.data().publishedDate)}}</h3>
-                <h3>Author: {{post.data().author}}</h3>
-            </div>
-            <div class="data-buttons">
-                <a routerLink="/post-details/{{post.id}}" class="buttonPostDetails">Details</a>
-            </div>
-        </div>
-    </div>
-</ng-container>
+<div *ngIf="posts" class="all-posts">
+    <button *ngIf="isLoggedIn()" type="button" class="buttonCreatePost" routerLink="/create-post">CREATE POST</button>
 
-<ng-container *ngIf="!posts">Soon...</ng-container>
+    <h1 class="posts-title">Blog Posts</h1>
+    <div class="posts-container">
+        <div *ngFor="let post of posts" class="post-container">
+            <div class="preview">
+                <img src={{post.data().imageUrl}}>
+            </div>
+            <h2>{{post.data().title}}</h2>
+            <div class="info">
+                <div class="data-info">
+                    <h3>Published Date: {{postService.formatDate(post.data().publishedDate)}}</h3>
+                    <h3>Author: {{post.data().author}}</h3>
+                </div>
+                <div class="data-buttons">
+                    <a routerLink="/post-details/{{post.id}}" class="buttonPostDetails">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!posts">Soon...</div>

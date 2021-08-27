@@ -1,7 +1,7 @@
-<ng-container *ngIf="post">
+<div *ngIf="post" class="details-page">
     <div class="post-container">
         <div class="preview">
-            <img src={{post.imageUrl}}>
+            <img class="img-responsive" src={{post.imageUrl}}>
         </div>
         <h2>Title: {{post.title}}</h2>
         <div class="info">
@@ -29,6 +29,6 @@
             </div>
         </div>
     </div>
-</ng-container>
+</div>
 
 <ng-container *ngIf="!post">Loading...</ng-container>

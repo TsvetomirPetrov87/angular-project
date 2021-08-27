@@ -6,61 +6,58 @@
     display: inline-block;
     padding: 20px 30px;
     width: 400px;
-    margin: 20px;
-    margin-bottom: 50px;
     border-radius: 10px;
     border: 3px solid rgb(83, 187, 201);
-}
-
-.post-container h2 {
+  }
+  
+  .post-container h2 {
     font-size: 22px;
-    height: 3.0em;
+    height: 3em;
     justify-content: left;
     color: rgb(83, 187, 201);
-}
-
-.preview {
+  }
+  
+  .preview {
     height: 250px;
     width: 250px;
     text-align: center;
-}
-
-.preview>img {
+  }
+  
+  .preview > img {
     object-fit: contain;
     height: 220px;
     width: 330px;
-}
-
-.data-info {
+  }
+  
+  .data-info {
     margin-top: 30px;
-}
-
-h3 {
+  }
+  
+  h3 {
     font-size: 18px;
-}
-
-.data-buttons {
+  }
+  
+  .data-buttons {
     text-align: center;
     margin: 5px;
-}
-
-.buttonCreatePost {
+  }
+  
+  .buttonCreatePost {
     background-color: rgb(105, 175, 128);
-    font-family: 'Arial Narrow', sans-serif;
+    font-family: "Arial Narrow", sans-serif;
     border: none;
     border-radius: 10px;
     color: white;
     padding: 10px;
-    width: 110px;
-    margin: 15px 895px;
     text-align: center;
     display: inline-block;
     font-size: 18px;
     font-weight: bold;
     position: relative;
-}
-
-.buttonPostDetails {
+    grid-area: b;
+  }
+  
+  .buttonPostDetails {
     background-color: rgb(83, 187, 201);
     border: none;
     color: white;
@@ -71,4 +68,28 @@ h3 {
     text-decoration: none;
     display: inline-block;
     font-size: 18px;
-}
+  }
+  
+  .all-posts {
+    display: grid;
+    grid-template:
+      "d a b"
+      "c c c";
+    grid-template-columns: 1fr 3fr 1fr;
+    row-gap: 5vh;
+    padding: 3% 5% 3% 5%;
+  }
+  
+  .posts-title {
+    grid-area: a;
+  }
+  
+  .posts-container {
+    grid-area: c;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fill, 425px);
+    grid-gap: 2vw;
+    row-gap: 3vh;
+    justify-content: space-evenly;
+  }
