@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { emailValidator } from 'src/app/shared/validators';
-import { Subject } from 'rxjs';
 
 
 @Component({
@@ -13,7 +12,6 @@ import { Subject } from 'rxjs';
 })
 export class RegisterComponent {
 
- killSubscription = new Subject();
 
   constructor(
     private formBuilder: FormBuilder,
