@@ -6,8 +6,6 @@ export interface IPost {
     language: string
     content: string
     userId: string
-    postId: string
-    //comments: string[]
 }
 
 

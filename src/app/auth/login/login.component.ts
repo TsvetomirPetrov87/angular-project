@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import * as firebase from 'firebase/app';
 import { emailValidator } from 'src/app/shared/validators';
 import { AuthService } from '../auth.service';

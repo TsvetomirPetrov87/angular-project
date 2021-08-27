@@ -13,7 +13,7 @@ export class HomeComponent {
     private authService: AuthService,
     private router: Router) { }
 
-    get isLoggedIn(): boolean {
-      return this.authService.isLoggedIn();
-    }
+  get isLoggedIn(): boolean {
+    return this.authService.isLoggedIn();
+  }
 }

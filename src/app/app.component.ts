@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable, Subject } from 'rxjs';
 import { AuthService } from './auth/auth.service';
-import { PostService } from './post/post.service';
-import { IPost } from './shared/models/post';
+
 
 @Component({
   selector: 'app-root',
@@ -11,15 +8,12 @@ import { IPost } from './shared/models/post';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
 
-  get authenticated(): boolean {
+  authenticated(): boolean {
     return this.authService.user !== undefined;
   }
 
-   constructor(
-     private db: AngularFirestore,
-     private authService: AuthService,
-    ) {
-  }
+  constructor(
+    private authService: AuthService,
+  ) {}
 }

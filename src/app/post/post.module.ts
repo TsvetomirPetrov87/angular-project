@@ -16,13 +16,13 @@ import { FormsModule } from '@angular/forms';
     PostDetailsComponent
   ],
   imports: [
-    CommonModule, 
+    CommonModule,
     PostRoutingModule,
     FormsModule
   ],
   exports: [
     PostsComponent,
-    CreatePostComponent, 
+    CreatePostComponent,
     PostDetailsComponent,
     FormsModule
   ],

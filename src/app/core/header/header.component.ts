@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
@@ -9,20 +8,14 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class HeaderComponent {
 
-  constructor(
-    private authService: AuthService,
-    private router: Router) { }
+  constructor(private authService: AuthService) { }
 
-    get isLoggedIn(): boolean {
-      return this.authService.isLoggedIn();
-    }
+  get isLoggedIn(): boolean {
+    return this.authService.isLoggedIn();
+  }
 
-    logout(): void {
-      this.authService.logout();
-    }
-
-    // get email(): string {
-    //   return this.authService.user?.email;
-    // }
+  logout(): void {
+    this.authService.logout();
+  }
 
 }

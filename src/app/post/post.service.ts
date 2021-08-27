@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import * as firebase from 'firebase';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 import { IPost } from '../shared/models/post';
-import { finalize } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +18,7 @@ export class PostService {
     private db: AngularFirestore,
     private authService: AuthService,
     private storage: AngularFireStorage
-    ) { }
+  ) { }
 
   getPosts() {
     return this.post$ = this.db.collection('posts').get();
@@ -33,32 +31,32 @@ export class PostService {
   savePost(data: any) {
     const filePath = `images/${this.fileToUpload.name}`;
     const fileRef = this.storage.ref(filePath);
-    const uploadTask =
-      this.storage.upload(filePath, this.fileToUpload);
+    const uploadTask = this.storage.upload(filePath, this.fileToUpload);
 
     return uploadTask.snapshotChanges().toPromise().then(() => {
       return fileRef.getDownloadURL().toPromise().then((url) => {
         console.log(url)
+
         return this.db.collection('posts').add({
-        title: data.title,
-        author: this.authService.userDetails.displayName,
-        publishedDate: (new Date()).toISOString(),
-        language: data.language,
-        content: data.content,
-        imageUrl: url,
-        userId: this.authService.userDetails.uid
-      })
-        .then((postRef) => {
-          console.log("Post written with ID: ", postRef.id);
+          title: data.title,
+          author: this.authService.userDetails.displayName,
+          publishedDate: (new Date()).toISOString(),
+          language: data.language,
+          content: data.content,
+          imageUrl: url,
+          userId: this.authService.userDetails.uid
         })
-        .catch((error) => {
-          console.error("Error adding document: ", error);
-        })
+          .then((postRef) => {
+            console.log("Post written with ID: ", postRef.id);
+          })
+          .catch((error) => {
+            console.error("Error adding post: ", error);
+          })
       })
     });
   }
 
   getMyPosts() {
-    return this.db.collection('posts').ref.where("userId", "==", this.authService.userDetails.uid).get()
+    return this.db.collection('posts').ref.where("userId", "==", this.authService.userDetails.uid).get();
   }
 }

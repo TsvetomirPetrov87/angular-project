@@ -18,12 +18,10 @@ export class PostDetailsComponent {
   constructor(
     private postService: PostService,
     private activatedRoute: ActivatedRoute,
-    private db: AngularFirestore
-  ) { 
+  ) {
 
     const id = this.activatedRoute.snapshot.params['postId'];
     this.postService.getPostById(id).subscribe(post => this.post = post.data());
 
-   }
-
+  }
 }

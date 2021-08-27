@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import * as firebase from 'firebase';
 import { PostService } from 'src/app/post/post.service';
 import { IPost } from 'src/app/shared/models/post';
 import { AuthService } from '../auth.service';
@@ -12,14 +11,10 @@ import { AuthService } from '../auth.service';
 })
 export class MyPostsComponent {
 
-  //да се направи сортиране спрямо userId
-
   posts: IPost[] | any;
 
-  isLoggedIn(): boolean {
-    if(this.authService.isLoggedIn) {
-      return true;
-    }
+  get isLoggedIn(): boolean {
+    return this.authService.isLoggedIn();
   }
 
   constructor(
@@ -28,7 +23,7 @@ export class MyPostsComponent {
     private postService: PostService) {
 
     this.posts = undefined;
-    this.postService.getMyPosts().then(posts => this.posts = posts.docs)
-      
+    this.postService.getMyPosts().then(posts => this.posts = posts.docs);
+
   }
 }

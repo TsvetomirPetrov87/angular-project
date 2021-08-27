@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { checkForTheSameValue, emailValidator } from 'src/app/shared/validators';
-import * as firebase from 'firebase';
 
 
 @Component({
@@ -17,7 +16,7 @@ export class RegisterComponent {
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private router: Router
-  ) { }
+  ) {}
 
   formRegister = this.formBuilder.group({
     displayName: ['', [Validators.required, Validators.minLength(5)]],

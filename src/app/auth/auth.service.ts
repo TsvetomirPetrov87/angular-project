@@ -14,7 +14,7 @@ export class AuthService {
   userDetails: firebase.User = null;
 
   isLoggedIn(): boolean {
-    if(this.userDetails !== null) {
+    if (this.userDetails !== null) {
       return true;
     }
   }
@@ -25,42 +25,42 @@ export class AuthService {
 
     this.user = firebaseAuth.authState;
     this.user.subscribe(user => {
-      if(user) {
+      if (user) {
         this.userDetails = user;
       } else {
         this.userDetails = null;
       }
     })
-    
+
   }
 
-  login(data: {email: string, password: string}) {
+  login(data: { email: string, password: string }) {
     return this.firebaseAuth.auth.signInWithEmailAndPassword(data.email, data.password)
       .then((userCredential) => {
         this.router.navigate(['/home']);
       })
   }
 
-  register(data: {displayName: string, email: string, password: string, repeatPass: string}) {
+  register(data: { displayName: string, email: string, password: string, repeatPass: string }) {
     return this.firebaseAuth.auth.createUserWithEmailAndPassword(
-        data.email,
-        data.password
+      data.email,
+      data.password
     ).then((userCredential) => {
       userCredential.user.updateProfile({
         displayName: data.displayName,
       });
       this.router.navigate(['/login']);
     })
-    .catch((error) => {
-      console.log(error);
-    });
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   logout() {
-   this.firebaseAuth.auth.signOut()
-    .then(res => this.router.navigate(['/home']));
+    this.firebaseAuth.auth.signOut()
+      .then(res => this.router.navigate(['/home']));
   }
-  
+
 }
 
 

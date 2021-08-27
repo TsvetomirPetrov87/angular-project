@@ -3,7 +3,7 @@
         <img class="logo" src="/assets/logo.jpg" routerLink="/">
         <span> Civil Engineer Blog</span>
         <div class="navbar">
-             
+
             <ul *ngIf="!isLoggedIn">
                 <li><a routerLink="/login">LOGIN</a></li>
                 <li><a routerLink="/register">REGISTER</a></li>
@@ -13,8 +13,8 @@
                 <li><a (click)="logout()">LOGOUT</a></li>
             </ul>
             <ul *ngIf="isLoggedIn">
-            <li><a routerLink="/my-posts/:id">MY POSTS</a></li>
-        </ul>
+                <li><a routerLink="/my-posts/:userId">MY POSTS</a></li>
+            </ul>
         </div>
     </div>
 
@@ -25,9 +25,4 @@
             <li><a routerLink="/about">ABOUT US</a></li>
         </ul>
     </nav>
-
 </header>
-
-<!-- <div *ngIf="!isLoggedIn">
-     <img class="background-start-page" src="/assets/background 4.jpg"> 
-</div> -->

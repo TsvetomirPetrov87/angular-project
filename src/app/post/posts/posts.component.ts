@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthService } from 'src/app/auth/auth.service';
 import { IPost } from 'src/app/shared/models/post';
 import { PostService } from '../post.service';
@@ -22,8 +21,8 @@ export class PostsComponent {
     private postService: PostService) {
 
     this.posts = undefined;
-    this.postService.getPosts().subscribe(posts => this.posts = posts.docs)
-      
+    this.postService.getPosts().subscribe(posts => this.posts = posts.docs);
+
   }
 
 }
