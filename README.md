@@ -1,6 +1,6 @@
 # Civil Engineer Blog 
 
-    Civil Engineering Blog is an application in which contributors give their perspective on what’s happening today – across all the civil engineering disciplines. Civil engineers and other industry professionals talk about the real world challenges, issues and technical developments they have to deal with.
+Civil Engineering Blog is an application in which contributors give their perspective on what’s happening today – across all the civil engineering disciplines. Civil engineers and other industry professionals talk about the real world challenges, issues and technical developments they have to deal with.
 
 ## Tools, technologies and development server
 
@@ -79,4 +79,4 @@
 
 ## Build
 
-    Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
