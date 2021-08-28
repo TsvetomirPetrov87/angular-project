@@ -1,12 +1,17 @@
-Civil Engineer Blog Documentation
+# Civil Engineer Blog 
 
     Civil Engineering Blog is an application in which contributors give their perspective on what’s happening today – across all the civil engineering disciplines. Civil engineers and other industry professionals talk about the real world challenges, issues and technical developments they have to deal with.
 
-Tools and Technologies:
+## Tools, technologies and development server
+
     •	Technology: HTML, CSS, Angular-8, Firebase;
     •	Database: Firebase (Cloud Firestore, Firestore Authentication, Firestore Storage);
 
-Structure of Firebase/Cloud Firestore:
+    This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.25.
+
+    Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Structure of Firebase/Cloud Firestore:
     •	Posts
         o	title: string;
         o	author: string;
@@ -23,7 +28,7 @@ Structure of Firebase/Cloud Firestore:
         o	password: string;
         o	posts: string[];
 
-Structure of application:
+## Structure of application:
     •	core (module)
         o	footer (component);
         o	header (component);
@@ -48,25 +53,30 @@ Structure of application:
     •	about (component);
     •	not-found (component);
 
-This application covers all fundamentals of Angular:
 
-•	Cross component communication:
-•	Components, Template, and Data Binding;
-•	Routing and navigation: app-routing, post-routing, auth-routing;
-•	Service workers: post.service, auth.service;
-•	Dynamic pages: All Posts, Post Details, Create Post, My Posts;
-•	Authentication – user can view:
-    o	Public part (accessible without authentication):
-        	Header – Login and Register;
-        	Home, About us, All Posts, Post Details without claps;
-        	Footer;
-    o	Private part (accessible after successful login)
-        	Header – Welcome, displayName; Logout; My Posts;
-        	Home, About us, All Posts, Create Post, Post Details with claps;
-        	Footer;
-•	Validations and error handlings:
-    o	Login, Register – with Reactive Forms;
-    o	Create Post – with Template-Driven Forms;
-•	Dependency injection;
-•	CRUD operations;
-•	Use a file storage cloud API;
+## This application covers all fundamentals of Angular:
+
+    •	Cross component communication:
+    •	Components, Template, and Data Binding;
+    •	Routing and navigation: app-routing, post-routing, auth-routing;
+    •	Service workers: post.service, auth.service;
+    •	Dynamic pages: All Posts, Post Details, Create Post, My Posts;
+    •	Authentication – user can view:
+        o	Public part (accessible without authentication):
+            	Header – Login and Register;
+            	Home, About us, All Posts, Post Details without claps;
+            	Footer;
+        o	Private part (accessible after successful login)
+            	Header – Welcome, displayName; Logout; My Posts;
+            	Home, About us, All Posts, Create Post, Post Details with claps;
+            	Footer;
+    •	Validations and error handlings:
+        o	Login, Register – with Reactive Forms;
+        o	Create Post – with Template-Driven Forms;
+    •	Dependency injection;
+    •	CRUD operations;
+    •	Use a file storage cloud API;
+
+## Build
+
+    Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
