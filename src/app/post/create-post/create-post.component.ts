@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, NgForm } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PostService } from '../post.service';
 
@@ -11,7 +11,6 @@ import { PostService } from '../post.service';
 })
 export class CreatePostComponent {
 
-  createForm: FormGroup;
 
   constructor(
     private postService: PostService,
